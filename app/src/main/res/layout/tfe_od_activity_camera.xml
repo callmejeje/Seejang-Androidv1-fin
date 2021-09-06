@@ -63,7 +63,7 @@
             android:backgroundTint="#ffff00" />
 
             <Button
-                android:id="@+id/removeButton"
+                android:id="@+id/menuButton"
                 android:layout_width="184dp"
                 android:layout_height="68dp"
                 android:layout_alignParentLeft="true"

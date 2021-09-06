@@ -208,15 +208,12 @@ public class ShoppingActivity extends CameraActivity implements OnImageAvailable
                                 database.close();
                                 if (count>0) {              //장바구니에 추가한 상품만 음성으로 안내함
                                     speakOut(results.get(i).getTitle() + "(이)가 있습니다.");
-                                    to_remove=l;
-                                    /*
-                                    database = helper.getWritableDatabase();            //삭제하기 버튼 없애고 음성 출력시 바로 삭제
+                                    database = helper.getWritableDatabase();            //음성 출력후 목록에서 제품 삭제
                                     String table = "cart1";
                                     String whereClause = "name=?";
                                     String[] whereArgs = new String[] { String.valueOf(l) };
                                     database.delete(table, whereClause, whereArgs);
                                     database.close();
-                                    */
                                 }
                             }
                         }

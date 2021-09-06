@@ -99,11 +99,9 @@ public abstract class CameraActivity extends AppCompatActivity
   //protected Button button;
   protected TextToSpeech textToSpeech;
   Button basketButton;
-  Button removeButton;
+  Button menuButton;
   DbHelper helper;
-  //AlertDialog dialog;
-  //AlertDialog.Builder builder;
-  String to_remove="";
+
 
   @Override
   public void onInit(int status) { // OnInitListener를 통해서 TTS 초기화
@@ -122,8 +120,8 @@ public abstract class CameraActivity extends AppCompatActivity
   }
 
   public void speakOut() {
-    textToSpeech.setPitch((float) 0.6); // 음성 톤 높이 지정
-    textToSpeech.setSpeechRate((float) 0.7); // 음성 속도 지정
+    textToSpeech.setPitch((float) 1.0); // 음성 톤 높이 지정
+    textToSpeech.setSpeechRate((float) 0.6); // 음성 속도 지정
 
     // 첫 번째 매개변수: 음성 출력을 할 텍스트
     // 두 번째 매개변수: 1. TextToSpeech.QUEUE_FLUSH - 진행중인 음성 출력을 끊고 이번 TTS의 음성 출력
@@ -147,7 +145,7 @@ public abstract class CameraActivity extends AppCompatActivity
     getSupportActionBar().setDisplayShowTitleEnabled(false);
      */
     basketButton = findViewById(R.id.basketButton);
-    removeButton = findViewById(R.id.removeButton);
+    menuButton = findViewById(R.id.menuButton);
     helper = new DbHelper(this);
 
     basketButton.setOnClickListener(new View.OnClickListener() {
@@ -159,23 +157,12 @@ public abstract class CameraActivity extends AppCompatActivity
       }
     });
 
-    removeButton.setOnClickListener(new View.OnClickListener() {
+    menuButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        if (to_remove!="") {
-          SQLiteDatabase database = helper.getWritableDatabase();
-          String table = "cart1";
-          String whereClause = "name=?";
-          String[] whereArgs = new String[]{String.valueOf(to_remove)};
-          database.delete(table, whereClause, whereArgs);
-          database.close();
-          AlertDialog.Builder builder = new AlertDialog.Builder(CameraActivity.this);
-          builder.setTitle("삭제 알림").setMessage(to_remove+"(을)를 장바구니에서 삭제하였습니다.");
-          AlertDialog alertDialog = builder.create();
-          alertDialog.show();
-          alertDialog.dismiss();
-          to_remove="";
-        }
+        Intent intent = new Intent(getApplicationContext(), BasketActivity.class);
+        startActivity(intent);
+        finish();
       }
     });
 
