@@ -19,7 +19,8 @@
         android:textSize="32sp"
         android:textColor="#ffff00"/>
     <View
-        android:layout_width="match_parent"
+        android:layout_width="328dp"
+        android:layout_marginLeft="16dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="56dp"
         android:layout_height="2dp"
@@ -33,16 +34,18 @@
         android:orientation="vertical">
         <EditText
             android:id="@+id/editSearch"
-            android:layout_width="match_parent"
+            android:layout_width="328dp"
             android:layout_height="wrap_content"
             android:hint="검색어를 입력하세요."
+            android:layout_marginLeft="16dp"
             android:textSize="24sp"
             android:textColor="#ffffff"/>
 
         <ListView
             android:id="@+id/listView"
-            android:layout_width="wrap_content"
+            android:layout_width="328dp"
             android:layout_height="168dp"
+            android:layout_marginLeft="16dp"
             android:divider="#999999"
             android:dividerHeight="1dp">
 
@@ -52,14 +55,16 @@
             android:layout_width="410dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
+            android:layout_marginLeft="16dp"
             android:text="장바구니 목록"
             android:textSize="24sp"
             android:textColor="#ffffff"/>
 
         <ListView
             android:id="@+id/cart_list"
-            android:layout_width="match_parent"
+            android:layout_width="328dp"
             android:layout_height="206dp"
+            android:layout_marginLeft="16dp"
             android:layout_alignParentTop="true"
             android:textSize="24sp"
             android:textColor="#000000"
@@ -72,14 +77,14 @@
             android:text="삭제하기"
             android:textSize="24sp"
             android:textColor="#ffff00"
-            android:layout_marginLeft="256dp"
+            android:layout_marginLeft="196dp"
             android:background="@drawable/shape_delete_btn"/>
     </LinearLayout>
 
     <Button
         android:id="@+id/menuButton"
-        android:layout_width="184dp"
-        android:layout_height="68dp"
+        android:layout_width="154dp"
+        android:layout_height="64dp"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="16dp"
         android:layout_alignParentTop="true"
@@ -90,10 +95,10 @@
         android:backgroundTint="#ffff00" />
     <Button
         android:id="@+id/shoppingButton"
-        android:layout_width="184dp"
-        android:layout_height="68dp"
+        android:layout_width="154dp"
+        android:layout_height="64dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="220dp"
+        android:layout_marginLeft="190dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="584dp"
         android:text="장보기"
